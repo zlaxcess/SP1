@@ -1,5 +1,6 @@
 import tkinter as tk
 from ctypes import windll
+from tkinter import ttk
 
 try:
     # DPI adjust to suitable
@@ -13,7 +14,7 @@ try:
     root.attributes('-topmost', 1)
 
     # place a label on the root window
-    message = tk.Label(root, text="Hello, World!")
-    message.pack()
+    ttk.Label(root, text='Hi, there').pack()
+
 finally:
     root.mainloop()
