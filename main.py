@@ -1,16 +1,19 @@
-# This is a sample Python script.
+import tkinter as tk
+from ctypes import windll
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+try:
+    # DPI adjust to suitable
+    windll.shcore.SetProcessDpiAwareness(1)
 
+    root = tk.Tk()
+    root.title('Tkinter Window Demo')
+    root.geometry('1200x800+50+50')
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+    # Always on top
+    root.attributes('-topmost', 1)
 
-
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+    # place a label on the root window
+    message = tk.Label(root, text="Hello, World!")
+    message.pack()
+finally:
+    root.mainloop()
